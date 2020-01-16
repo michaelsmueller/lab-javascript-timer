@@ -5,8 +5,8 @@ class Chrono {
         this.timer = 0;
     }
     showTime () {
-        const hours = Math.floor(this.timer / 360);
-        const minutes = Math.floor( (this.timer - hours * 360) / 60);
+        const hours = Math.floor(this.timer / 3600);
+        const minutes = Math.floor( (this.timer - hours * 3600) / 60);
         const seconds = this.timer - hours * 360 - minutes * 60;
         console.log(`${hours}h, ${minutes}m, ${seconds}s`);
     }
