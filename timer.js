@@ -11,10 +11,18 @@ class Chrono {
         console.log(`${hours}h, ${minutes}m, ${seconds}s`);
     }
     start () {
-        const self = this;
-        self.intervalID = setInterval( function () {
-            self.timer++;
-        }, 1000);
+        try {
+            const self = this;
+            if (!self.intervalID) {
+                self.intervalID = setInterval( function () {
+                    self.timer++;
+                }, 1000);
+            } else {
+                throw new Error("Timer is already started.");
+            }
+        } catch(error) {
+            console.log(error);
+        }
     }
     // start () {
     //     this.intervalID = setInterval( function () {
